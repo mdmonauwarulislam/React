@@ -44,7 +44,7 @@ function InputBox({
                       (
                         <option value="usd" 
                         key={currency}
-                        value={currency}>
+                        value ={currency}>
                         {currency}
                     </option>
                       ))}

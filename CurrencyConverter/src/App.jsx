@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import './App.css'
 import {InputBox} from './component/input'
 import useCurrencyInfo from './hooks/useCurrencyInfo'
+
 function App() {
   const [amount, setAmount] = useState(0)
-  const [from, setFrom] = useState(0)
-  const [to, setTo] = useState(0)
+  const [from, setFrom] = useState("usd")
+  const [to, setTo] = useState("inr")
   const [convertedAmount, setConvertedAmount] = useState(0)
 
   const currencyInfo = useCurrencyInfo(from)
@@ -24,7 +24,7 @@ function App() {
     <div
         className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
         style={{
-            backgroundImage: `url('Photo by Dmitry Demidov from Pexels: https://www.pexels.com/photo/silver-and-gold-round-coins-3790639/')`,
+            backgroundImage: `url('https://images.pexels.com/photos/3532540/pexels-photo-3532540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')`,
         }}
     >
         <div className="w-full">
@@ -69,7 +69,7 @@ function App() {
                         />
                     </div>
                     <button type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg">
-                    Convert 
+                    Convert {from.toUpperCase()} to {to.toUpperCase()}
                     </button>
                 </form>
             </div>
